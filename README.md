@@ -1,7 +1,7 @@
 # React
 ![](img/react.png)
 
-Is an library for build user interfaces, have two libraries:
+Is an library for build user interfaces, is a single page application, have two libraries:
 - React-DOM: web pages applications
 - React-Native: mobile applications
 
@@ -34,8 +34,8 @@ npm cache clean --force
 ## Initial files
 - modules = folder with the dependencies of node js
 - package.js = manage the projects and have the dependencies of production of the project
-
+- public = folder with the files of the project
+- src = folder of source code of the project
+    - index.js = file that render the view
+    - App.js = components in jsx of react that react-dom convert in html
 ---
-## Commands 
-yarn = dependency manager
-- 
