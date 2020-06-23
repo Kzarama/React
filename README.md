@@ -12,6 +12,10 @@ A javascript library for building interfaces; can make a interfaces for mobile a
 React is structured in components that are classes, that are little blocks and make one application
 Element is an object
 
+## Props
+
+Props (Properties) arguments in a function
+
 ---
 
 ## To create app
