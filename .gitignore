@@ -1,5 +1,8 @@
 .vscode
 
+# babel
+babel
+
 # dependencies
 /node_modules
 node_modules
