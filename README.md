@@ -24,6 +24,23 @@ Events for manage actions
 - onClick = for buttons
 - onSubmit = for forms
 
+## React Router
+
+It's a tool that allows make Single Page Applications (SPA) easily
+
+- BrowserRouter: is a component that has to be at the top of the app, all things that be inside work like a SPA.
+- Route: represents a path, when match with a path make the render of the component, receive tree props: match, history, location.
+- Switch: inside of this go the routes.
+- Link: Take the first place of the element \<a>, avoid that reload the page and update the URL.
+
+### To install react router
+
+To install the react-router that use in the navigators
+
+```bash
+npm install react-router-dom
+```
+
 ---
 
 ## To create app
