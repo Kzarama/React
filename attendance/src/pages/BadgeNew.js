@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./styles/BadgeNew.css";
-import header from "../images/attendance.png";
+import confLogo from "../images/attendance.png";
 import Navbar from "../components/Navbar";
 import BadgeFrom from "../components/BadgeFrom";
 import Badge from "../components/Badge";
@@ -30,9 +30,19 @@ class BadgeNew extends React.Component {
     return (
       <div>
         <Navbar />
-        <div className="BadgeNew__hero">
-          <img className="img-fluid" src={header} alt="logo" />
+
+        <div className="Badges">
+          <div className="Badges__hero">
+            <div className="Badges__container">
+              <img
+                className="Badges_conf-logo"
+                src={confLogo}
+                alt="Conference logo"
+              />
+            </div>
+          </div>
         </div>
+
         <div className="container">
           <div className="row">
             <div className="col-6">
