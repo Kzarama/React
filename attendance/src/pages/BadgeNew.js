@@ -2,7 +2,6 @@ import React from "react";
 
 import "./styles/BadgeNew.css";
 import confLogo from "../images/attendance.png";
-import Navbar from "../components/Navbar";
 import BadgeFrom from "../components/BadgeFrom";
 import Badge from "../components/Badge";
 
@@ -28,9 +27,7 @@ class BadgeNew extends React.Component {
 
   render() {
     return (
-      <div>
-        <Navbar />
-
+      <React.Fragment>
         <div className="Badges">
           <div className="Badges__hero">
             <div className="Badges__container">
@@ -63,7 +60,7 @@ class BadgeNew extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
