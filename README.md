@@ -12,6 +12,18 @@ A javascript library for building interfaces; can make a interfaces for mobile a
 React is structured in components that are classes, that are little blocks and make one application
 Element is an object
 
+### Life cycle component
+
+- Mounting: is the introduction of the component in the dom of the index. react call the methods:
+  - builder: initialize the state of the values
+  - render: introduce the component in the code
+  - componentDidMount: indicates the the component was mount
+- Updating: the component is rendered again, maybe for update the data
+  - render:
+  - componentDidUpdate: indicates that the component was updated, receive two arguments: props before and the state before the update
+- Unmounting: when the component leaves of the page and none requires it
+  - componentWillUnmount: clean the memory
+
 ## Props
 
 Props (Properties) arguments in a function
