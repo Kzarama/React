@@ -16,6 +16,14 @@ Element is an object
 
 Props (Properties) arguments in a function
 
+## Events
+
+Events for manage actions
+
+- onChange = for inputs
+- onClick = for buttons
+- onSubmit = for forms
+
 ---
 
 ## To create app
