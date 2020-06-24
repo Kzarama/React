@@ -11,8 +11,8 @@ class BadgeForm extends React.Component {
             <input
               className="form-control"
               type="text"
-              name="first_name"
-              value={this.props.formValues.first_name}
+              name="firstName"
+              value={this.props.formValues.firstName}
               onChange={this.props.onChange}
             />
           </div>
@@ -22,8 +22,8 @@ class BadgeForm extends React.Component {
             <input
               className="form-control"
               type="text"
-              name="last_name"
-              value={this.props.formValues.last_name}
+              name="lastName"
+              value={this.props.formValues.lastName}
               onChange={this.props.onChange}
             />
           </div>
@@ -44,8 +44,8 @@ class BadgeForm extends React.Component {
             <input
               className="form-control"
               type="text"
-              name="job_title"
-              value={this.props.formValues.job_title}
+              name="jobTitle"
+              value={this.props.formValues.jobTitle}
               onChange={this.props.onChange}
             />
           </div>

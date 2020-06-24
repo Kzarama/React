@@ -1,6 +1,7 @@
 import React from "react";
 
 import "./styles/BadgesList.css";
+import { Link } from "react-router-dom";
 
 class BadgesListItem extends React.Component {
   render() {
@@ -8,17 +9,17 @@ class BadgesListItem extends React.Component {
       <div className="BadgesListItem">
         <img
           className="BadgesListItem__avatar"
-          src={this.props.badge.avatar_url}
-          alt={`${this.props.badge.first_name} ${this.props.badge.last_name}`}
+          src={this.props.badge.avatarUrl}
+          alt={`${this.props.badge.firstName} ${this.props.badge.lastName}`}
         />
 
         <div>
           <strong>
-            {this.props.badge.first_name} {this.props.badge.last_name}
+            {this.props.badge.firstName} {this.props.badge.lastName}
           </strong>
           <br />@{this.props.badge.twitter}
           <br />
-          {this.props.badge.job_title}
+          {this.props.badge.jobTitle}
         </div>
       </div>
     );
@@ -27,6 +28,17 @@ class BadgesListItem extends React.Component {
 
 class BadgesList extends React.Component {
   render() {
+    if (this.props.badges.length === 0) {
+      return (
+        <div>
+          <h3>No badges were found</h3>
+          <Link className="btn btn-primary" to="/badges/new">
+            Create new badge
+          </Link>
+        </div>
+      );
+    }
+
     return (
       <div className="BadgesList">
         <ul className="list-unstyled">

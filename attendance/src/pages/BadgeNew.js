@@ -8,10 +8,10 @@ import Badge from "../components/Badge";
 class BadgeNew extends React.Component {
   state = {
     form: {
-      first_name: "",
-      last_name: "",
+      firstName: "",
+      lastName: "",
       email: "",
-      job_title: "",
+      jobTitle: "",
       twitter: "",
     },
   };
@@ -44,12 +44,12 @@ class BadgeNew extends React.Component {
           <div className="row">
             <div className="col-6">
               <Badge
-                first_name={this.state.form.first_name}
-                last_name={this.state.form.last_name}
+                firstName={this.state.form.firstName}
+                lastName={this.state.form.lastName}
                 twitter={this.state.form.twitter}
-                job_title={this.state.form.job_title}
+                jobTitle={this.state.form.jobTitle}
                 email={this.state.form.email}
-                avatar_url="https://picsum.photos/200/200/"
+                avatarUrl="https://picsum.photos/200/200/"
               />
             </div>
             <div className="col-6">
