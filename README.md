@@ -36,6 +36,16 @@ Events for manage actions
 - onClick = for buttons
 - onSubmit = for forms
 
+## Hooks
+
+Allows that the functions have features that only have the classes like:
+
+- useState: for the manage of the states
+- useEffect: for subscribe the component to its life cycle
+- useReducer: execute an effect based in an action
+
+Also allows make a custom hooks, its have to be in the function and must start with the word 'use'
+
 ## React Router
 
 It's a tool that allows make Single Page Applications (SPA) easily
