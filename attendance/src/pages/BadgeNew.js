@@ -41,7 +41,7 @@ class BadgeNew extends React.Component {
                 twitter={this.state.form.twitter || "@twitter"}
                 jobTitle={this.state.form.jobTitle || "JOB TITLE"}
                 email={this.state.form.email}
-                avatarUrl="https://picsum.photos/200/200/"
+                avatarUrl={this.state.form.avatarUrl}
               />
             </div>
             <div className="col-6">
