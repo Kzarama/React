@@ -7,6 +7,8 @@ import DeleteBadgeModal from "../components/DeleteBadgeModal";
 import { Link } from "react-router-dom";
 
 function BadgeDetails(props) {
+  const [count, setCount] = React.useState(0);
+
   return (
     <div>
       <div className="BadgeDetails__hero">
@@ -41,6 +43,15 @@ function BadgeDetails(props) {
             <h2>Actions</h2>
             <div>
               <div>
+                <button
+                  onClick={() => {
+                    setCount(count + 1);
+                  }}
+                  className="btn btn-primary mr-4 mb-4"
+                >
+                  Increase count: {count}
+                </button>
+
                 <Link
                   className="btn btn-primary mb-4"
                   to={`/badges/${props.badge.id}/edit`}
