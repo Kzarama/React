@@ -28,26 +28,18 @@ class BadgeNew extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="Badges">
-          <div className="Badges__hero">
-            <div className="Badges__container">
-              <img
-                className="Badges_conf-logo"
-                src={confLogo}
-                alt="Conference logo"
-              />
-            </div>
-          </div>
+        <div className="BadgeNew__hero">
+          <img className="img-fluid" src={confLogo} alt="Conference logo" />
         </div>
 
         <div className="container">
           <div className="row">
             <div className="col-6">
               <Badge
-                firstName={this.state.form.firstName}
-                lastName={this.state.form.lastName}
-                twitter={this.state.form.twitter}
-                jobTitle={this.state.form.jobTitle}
+                firstName={this.state.form.firstName || "FIRST NAME"}
+                lastName={this.state.form.lastName || "LAST NAME"}
+                twitter={this.state.form.twitter || "@twitter"}
+                jobTitle={this.state.form.jobTitle || "JOB TITLE"}
                 email={this.state.form.email}
                 avatarUrl="https://picsum.photos/200/200/"
               />
