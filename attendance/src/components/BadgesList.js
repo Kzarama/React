@@ -41,7 +41,7 @@ class BadgesList extends React.Component {
     }
 
     return (
-      <div className="BadgesList">
+      <div className="Badges__list Badges__container BadgesList">
         <ul className="list-unstyled">
           {this.props.badges.map((badge) => {
             return (

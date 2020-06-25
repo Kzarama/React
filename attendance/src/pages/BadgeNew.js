@@ -5,7 +5,7 @@ import confLogo from "../images/attendance.png";
 import BadgeForm from "../components/BadgeForm";
 import Badge from "../components/Badge";
 import api from "../api";
-import PageLoading from "../components/PageLoading";
+import Loading from "../components/Loading";
 
 class BadgeNew extends React.Component {
   state = {
@@ -45,7 +45,7 @@ class BadgeNew extends React.Component {
 
   render() {
     if (this.state.loading) {
-      return <PageLoading />;
+      return <Loading />;
     }
 
     return (

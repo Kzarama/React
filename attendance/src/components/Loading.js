@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import "./styles/Loader.css";
 import "./styles/PageLoading.css";
 
-class PageLoading extends Component {
+class Loading extends Component {
   render() {
     return (
       <div className="PageLoading">
@@ -23,4 +23,4 @@ class PageLoading extends Component {
   }
 }
 
-export default PageLoading;
+export default Loading;
