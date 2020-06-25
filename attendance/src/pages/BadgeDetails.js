@@ -6,8 +6,18 @@ import Badge from "../components/Badge";
 import DeleteBadgeModal from "../components/DeleteBadgeModal";
 import { Link } from "react-router-dom";
 
-function BadgeDetails(props) {
+function useIncreaseCounter(max) {
   const [count, setCount] = React.useState(0);
+
+  if (count > max) {
+    setCount(0);
+  }
+
+  return [count, setCount];
+}
+
+function BadgeDetails(props) {
+  const [count, setCount] = useIncreaseCounter(4);
 
   return (
     <div>
