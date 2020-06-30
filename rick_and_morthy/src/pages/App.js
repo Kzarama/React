@@ -53,7 +53,7 @@ class App extends React.Component {
           <img src={logo} alt="logo" />
         </header>
 
-        <div>
+        <div className="container">
           <ul className="row">
             {this.state.data.results.map((character) => (
               <li className="col-6 col-md-3" key={character.id}>
@@ -61,10 +61,17 @@ class App extends React.Component {
               </li>
             ))}
           </ul>
-          {this.state.loading && <div>loading</div>}
-          {!this.state.loading && (
-            <button onClick={() => this.fetchCharacters()}>Load more</button>
-          )}
+          <div className="button">
+            {this.state.loading && <div>loading</div>}
+            {!this.state.loading && (
+              <button
+                className="load_more_button"
+                onClick={() => this.fetchCharacters()}
+              >
+                Load more
+              </button>
+            )}
+          </div>
         </div>
       </React.Fragment>
     );

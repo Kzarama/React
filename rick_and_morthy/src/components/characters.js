@@ -1,11 +1,16 @@
 import React from "react";
+import "./styles/characters.css";
 
 class Characters extends React.Component {
   render() {
     return (
-      <div>
-        <img src={this.props.character.image} alt="" />
-        <h1>{this.props.character.name}</h1>
+      <div
+        className="character"
+        style={{ backgroundImage: `url(${this.props.character.image})` }}
+      >
+        <div className="name_container">
+          <h1>{this.props.character.name}</h1>
+        </div>
       </div>
     );
   }
