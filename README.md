@@ -129,3 +129,32 @@ npm cache clean --force
   - App.js = components in jsx of react that react-dom convert in html
 
 ---
+
+## To deploy 
+
+Add the next line in the package.json (change USERNAME and REPOSITORY for your username and your repository)
+
+```json
+"homepage": "https://USERNAME.github.io/REPOSITORY",
+```
+
+Run this command in bash
+
+```bash
+npm install --save gh-pages
+```
+
+Add the next lines in scripts of package.json
+
+```json
+"predeploy": "npm run build",
+"deploy": "gh-pages -b master -d build",
+```
+
+Deploy the project
+
+```bash
+npm run deploy
+```
+
+---
