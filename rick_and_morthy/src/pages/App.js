@@ -50,7 +50,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <header>
-          <img src={logo} alt="logo" />
+          <img className="img" src={logo} alt="logo" />
         </header>
 
         <div className="container">
