@@ -11,24 +11,44 @@ function CharacterDetails(props) {
   return ReactDOM.createPortal(
     <div className="Detail">
       <div className="Detail_container">
-        <h1>{props.character.name}</h1>
-        <img src={props.character.image} alt={props.character.name} />
-        {props.character.status === "Alive" ? (
+        <img
+          className="img-character"
+          src={props.character.image}
+          alt={props.character.name}
+        />
+
+        <div>
+          <h1>{props.character.name}</h1>
+
+          {props.character.status === "Alive" ? (
+            <h2>
+              Status = <span class="dot-alive"></span> Alive
+            </h2>
+          ) : props.character.status === "Dead" ? (
+            <h2>
+              Status = <span class="dot-dead"></span> Dead
+            </h2>
+          ) : (
+            <h2>
+              Status = <span class="dot-unknown"></span> Unknown
+            </h2>
+          )}
+
           <h2>
-            Status = <span class="dot-alive"></span>
+            Specie: {props.character.species}
+            {props.character.type !== "" ? " - " + props.character.type : ""}
           </h2>
-        ) : props.character.status === "Dead" ? (
-          <h2>
-            Status = <span class="dot-dead"></span>
-          </h2>
-        ) : (
-          <h2>
-            Status = <span class="dot-unknown"></span>
-          </h2>
-        )}
-        <button onClick={props.onClose} className="Detail_close-button">
-          Close
-        </button>
+
+          <h2>Gender: {props.character.gender}</h2>
+
+          <h2>Origin: {props.character.origin.name}</h2>
+
+          <h2>Last known location: {props.character.location.name}</h2>
+
+          <button onClick={props.onClose} className="Detail_close-button">
+            CLOSE
+          </button>
+        </div>
       </div>
     </div>,
     document.getElementById("details")
