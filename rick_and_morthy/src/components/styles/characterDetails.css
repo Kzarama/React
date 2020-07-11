@@ -1,29 +1,60 @@
-.Modal {
+.Detail {
   position: fixed;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
 
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
-.Modal__container {
+.Detail_container {
+  box-shadow: 0px 0px 50px 20px rgb(96, 211, 81);
+  border-radius: 25px;
   position: relative;
   top: 10rem;
-  background-color: #ffffff;
+  background-color: rgb(87, 169, 199);
   padding: 1rem;
   width: 400px;
+
+  text-align: center;
 }
 
-.Modal__close-button {
+.Detail_close-button {
   position: absolute;
   top: 0;
   right: 0;
   border: 0;
-  background-color: #f5f5f5;
+  background-color: rgb(96, 211, 81);
   padding: 0.5rem1rem;
+}
+
+.dot-alive {
+  height: 25px;
+  width: 25px;
+  background-color: rgb(0, 255, 0);
+  border-radius: 50%;
+  display: inline-block;
+  position: static;
+}
+
+.dot-unknown {
+  height: 25px;
+  width: 25px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  display: inline-block;
+  position: static;
+}
+
+.dot-dead {
+  height: 25px;
+  width: 25px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 50%;
+  display: inline-block;
+  position: static;
 }
