@@ -67,12 +67,11 @@ class App extends React.Component {
         <div className="container">
           <ul className="row">
             {this.state.data.results.map((character) => (
-              <li
-                onClick={(e) => this.handleOpenDetail(e, character)}
-                className="col-6 col-md-3"
-                key={character.id}
-              >
-                <Characters character={character} />
+              <li className="col-6 col-md-3" key={character.id}>
+                <Characters
+                  onOpen={this.handleOpenDetail}
+                  character={character}
+                />
               </li>
             ))}
           </ul>
