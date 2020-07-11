@@ -17,7 +17,7 @@ function CharacterDetails(props) {
           alt={props.character.name}
         />
 
-        <div>
+        <div className="detail_properties">
           <h1>{props.character.name}</h1>
 
           {props.character.status === "Alive" ? (

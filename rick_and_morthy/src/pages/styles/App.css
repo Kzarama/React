@@ -21,6 +21,8 @@ ul {
 }
 
 .row {
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
 }
@@ -35,7 +37,7 @@ ul {
   .col-md-3 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    flex-basis: 23%;
+    flex-basis: 24%;
     text-align: center;
   }
 }
