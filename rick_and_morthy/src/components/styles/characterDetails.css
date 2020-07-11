@@ -17,19 +17,19 @@
 
 .Detail_container {
   box-shadow: 0px 0px 50px 20px rgb(96, 211, 81);
-  border-radius: 25px;
   position: relative;
   top: 10rem;
   background-color: rgb(87, 169, 199);
-  padding: 1rem;
-  width: 1000px;
+  padding: 0;
+  width: 70%;
 
   text-align: center;
 }
 
 .img-character {
+  margin: 0;
   float: left;
-  width: 600px;
+  width: 50%;
 }
 
 .Detail_close-button {

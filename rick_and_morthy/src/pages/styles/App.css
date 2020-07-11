@@ -1,11 +1,10 @@
 body {
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 35px;
   background: linear-gradient(0.25turn, #174e01, #02658b);
 }
 
 header {
-  background: linear-gradient(0.25turn, #174e01, #02658b);
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -29,14 +28,14 @@ ul {
 .col-6 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-  flex-basis: 50%;
+  flex-basis: 100%;
 }
 
 @media screen and (min-width: 600px) {
   .col-md-3 {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
-    flex-basis: 20%;
+    flex-basis: 23%;
     text-align: center;
   }
 }
@@ -44,11 +43,12 @@ ul {
 .load_more_button {
   color: white;
   width: 20%;
-  height: 50px;
+  height: 120px;
   background: linear-gradient(0.25turn, #02658b, #174e01);
+  font-size: 50px;
 }
 
-.button {
+.div_button {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -83,14 +83,14 @@ class App extends React.Component {
             character={this.state.characterSelected}
           />
 
-          <div className="button">
+          <div className="div_button">
             {this.state.loading && <div>loading</div>}
             {!this.state.loading && (
               <button
                 className="load_more_button"
                 onClick={() => this.fetchCharacters()}
               >
-                Load more
+                LOAD MORE
               </button>
             )}
           </div>
