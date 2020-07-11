@@ -7,64 +7,6 @@ A javascript library for building interfaces; can make a interfaces for mobile a
 - React-DOM: web pages applications
 - React-Native: mobile applications
 
-## Components
-
-React is structured in components that are classes, that are little blocks and make one application
-Element is an object
-
-### Life cycle component
-
-- Mounting: is the introduction of the component in the dom of the index. react call the methods:
-  - builder: initialize the state of the values
-  - render: introduce the component in the code
-  - componentDidMount: indicates the the component was mount
-- Updating: the component is rendered again, maybe for update the data
-  - render:
-  - componentDidUpdate: indicates that the component was updated, receive two arguments: props before and the state before the update
-- Unmounting: when the component leaves of the page and none requires it
-  - componentWillUnmount: clean the memory
-
-## Props
-
-Props (Properties) arguments in a function
-
-## Events
-
-Events for manage actions
-
-- onChange = for inputs
-- onClick = for buttons
-- onSubmit = for forms
-
-## Hooks
-
-Allows that the functions have features that only have the classes like:
-
-- useState: for the manage of the states
-- useEffect: for subscribe the component to its life cycle
-- useReducer: execute an effect based in an action
-
-Also allows make a custom hooks, its have to be in the function and must start with the word 'use'
-
-## React Router
-
-It's a tool that allows make Single Page Applications (SPA) easily
-
-- BrowserRouter: is a component that has to be at the top of the app, all things that be inside work like a SPA.
-- Route: represents a path, when match with a path make the render of the component, receive tree props: match, history, location.
-- Switch: inside of this go the routes.
-- Link: Take the first place of the element \<a>, avoid that reload the page and update the URL.
-
-### To install react router
-
-To install the react-router that use in the navigators
-
-```bash
-npm install react-router-dom
-```
-
----
-
 ## To create app
 
 ### To create react app using npm
@@ -121,7 +63,7 @@ npm cache clean --force
 
 ## Initial files
 
-- modules = folder with the dependencies of node js
+- node_modules = folder with the dependencies of node js
 - package.js = manage the projects and have the dependencies of production of the project
 - public = folder with the files of the project
 - src = folder of source code of the project
@@ -130,7 +72,71 @@ npm cache clean --force
 
 ---
 
-## To deploy 
+## Components
+
+React is structured in components that are classes, that are little blocks and make one application
+Element is an object
+
+### Types of components
+
+- Stateful: are the most robust, these extends from React.Component. They allow us to manage state and life cycle
+
+- Stateless: or presentational. Are functions that return code in JSX format
+
+### Life cycle component
+
+- Mounting: is the introduction of the component in the dom of the index. react call the methods:
+  - builder: initialize the state of the values
+  - render: introduce the component in the code
+  - componentDidMount: indicates the the component was mount
+- Updating: the component is rendered again, maybe for update the data
+  - render:
+  - componentDidUpdate: indicates that the component was updated, receive two arguments: props before and the state before the update
+- Unmounting: when the component leaves of the page and none requires it
+  - componentWillUnmount: clean the memory
+
+## Props
+
+Props (Properties) arguments in a function
+
+## Events
+
+Events for manage actions
+
+- onChange = for inputs
+- onClick = for buttons
+- onSubmit = for forms
+
+## Hooks
+
+Allows that the functions have features that only have the classes like:
+
+- useState: for the manage of the states
+- useEffect: for subscribe the component to its life cycle
+- useReducer: execute an effect based in an action
+
+Also allows make a custom hooks, its have to be in the function and must start with the word 'use'
+
+## React Router
+
+It's a tool that allows make Single Page Applications (SPA) easily
+
+- BrowserRouter: is a component that has to be at the top of the app, all things that be inside work like a SPA.
+- Route: represents a path, when match with a path make the render of the component, receive tree props: match, history, location.
+- Switch: inside of this go the routes.
+- Link: Take the first place of the element \<a>, avoid that reload the page and update the URL.
+
+### To install react router
+
+To install the react-router that use in the navigators
+
+```bash
+npm install react-router-dom
+```
+
+---
+
+## To deploy
 
 Add the next line in the package.json (change USERNAME and REPOSITORY for your username and your repository)
 
