@@ -31,6 +31,154 @@ Create app without install react using npm(npx for install without install react
 npx create-react-app APP
 ```
 
+### To create manually
+
+Create a folder for the project
+
+```bash
+mkdir PROJECT_NAME
+```
+
+Enter in the folder
+
+```bash
+cd PROJECT_NAME
+```
+
+Initialize a repository
+
+```bash
+git init
+```
+
+Initialize the project (-y for pre-configurations of the project)
+
+```bash
+npm init -y
+```
+
+Then create a folder called src, public. In public folder create index.html
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>TITLE</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+```
+
+Install react and react-dom in the project
+
+```bash
+npm install react react-dom
+```
+
+Babel = is a javascript tool that transform the code so that all browsers can use it
+Install babel in the project
+
+```bash
+npm install @babel/core babel-loader @babel/preset-env @babel/preset-react --save-dev
+```
+
+Create babel file called .babelrc and put inside
+
+```
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react"
+  ]
+}
+```
+
+Webpack = is a tol that help to compile the code of multiple files in only one, that have the code ready for the production
+
+```bash
+npm install webpack webpack-cli html-webpack-plugin html-loader --save-dev
+```
+
+In a new file called webpack.config.js put
+
+```js
+const path = require("path");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+
+module.exports = {
+  entry: "./src/index.js",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle.js",
+  },
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
+      {
+        test: /\.html$/,
+        use: [
+          {
+            loader: "html-loader",
+          },
+        ],
+      },
+    ],
+  },
+  plugins: [
+    new HtmlWebPackPlugin({
+      template: "./public/index.html",
+      filename: "./index.html",
+    }),
+  ],
+};
+```
+
+In package.js in the scrips add
+
+```json
+"build": "webpack --mode production",
+"start": "webpack-dev-server --open --mode development"
+```
+
+Compile the project
+
+```bash
+npm run build
+```
+
+To install webpack server
+
+```bash
+npm install webpack-dev-server --save-dev
+```
+
+SASS = is a preprocessor that allow make CSS but with a syntax more friendly
+Styles with SASS
+
+```bash
+npm install mini-css-extract-plugin css-loader node-sass sass-loader --save-dev
+```
+
+ESLint = is a linter that helps to follow good practices and style guides for avoid errors and follow a standard
+Install ESLint
+
+```bash
+npm install eslint babel-eslint eslint-config-airbnb eslint-plugin-import eslint-plugin-react eslint-plugin-jsx-a11y --save-dev
+```
+
+Create a file called .eslintrc for add rules for the eslint
+
 ---
 
 ## To run the application
@@ -65,7 +213,7 @@ npm cache clean --force
 
 - node_modules = folder with the dependencies of node js
 - package.js = manage the projects and have the dependencies of production of the project
-- public = folder with the files of the project
+- public = folder with the public files of the project
 - src = folder of source code of the project
   - index.js = file that render the view, is the entry point of the application
   - App.js = components in jsx of react that react-dom convert in html
