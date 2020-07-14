@@ -2,6 +2,11 @@
 
 ![](img/react.png)
 
+To see more projects of React
+
+- [react-video](https://github.com/Kzarama/react-video)
+- [rick-and-morty](https://github.com/Kzarama/rick-and-morty)
+
 A javascript library for building interfaces; can make a interfaces for mobile and web; react is declarative this is that we are told what to do and not how to do it; use JSX that is HTML in JS; Is a single page application, have two libraries:
 
 - React-DOM: web pages applications
