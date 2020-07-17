@@ -287,6 +287,21 @@ To install the react-router that use in the navigators
 npm install react-router-dom
 ```
 
+## Redux
+
+Is a tool that allows store the information, the principles of redux are:
+
+- Storage: store the state
+- Immutable: ever create new states
+- Centralized: the information of all application is stored here
+
+Phases of redux:
+
+- Store: store the information
+- Reducers: states
+- Action creators: functions that request for information
+- Component: JSX code
+
 ---
 
 ## To deploy
