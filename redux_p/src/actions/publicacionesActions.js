@@ -2,7 +2,10 @@ import axios from "axios";
 import {
   CARGANDO,
   ERROR,
-  TRAER_POR_USUARIO,
+  ACTUALIZAR,
+  COMENTARIOS_CARGANDO,
+  COMENTARIOS_ERROR,
+  COMENTARIOS_ACTUALIZAR,
 } from "../types/publicacionesTypes";
 import * as usuariosTypes from "../types/usuariosTypes";
 
@@ -31,7 +34,7 @@ export const traerPorUsuario = (key) => async (dispatch, getState) => {
     const publicaciones_actualizadas = [...publicaciones, nuevas];
 
     dispatch({
-      type: TRAER_POR_USUARIO,
+      type: ACTUALIZAR,
       payload: publicaciones_actualizadas,
     });
 
@@ -56,7 +59,66 @@ export const traerPorUsuario = (key) => async (dispatch, getState) => {
 };
 
 export const abrirCerrar = (publicaciones_key, comentarios_key) => (
-  dispatch
+  dispatch,
+  getState
 ) => {
-  alert(publicaciones_key, comentarios_key);
+  const { publicaciones } = getState().publicacionesReducer;
+  const seleccionada = publicaciones[publicaciones_key][comentarios_key];
+
+  const actualizada = {
+    ...seleccionada,
+    abierto: !seleccionada.abierto,
+  };
+
+  const publicaciones_actualizadas = [...publicaciones];
+  publicaciones_actualizadas[publicaciones_key] = [
+    ...publicaciones[publicaciones_key],
+  ];
+  publicaciones_actualizadas[publicaciones_key][comentarios_key] = actualizada;
+
+  dispatch({
+    type: ACTUALIZAR,
+    payload: publicaciones_actualizadas,
+  });
+};
+
+export const traerComentarios = (publicaciones_key, comentarios_key) => async (
+  dispatch,
+  getState
+) => {
+  dispatch({
+    type: COMENTARIOS_CARGANDO,
+  });
+
+  const { publicaciones } = getState().publicacionesReducer;
+  const seleccionada = publicaciones[publicaciones_key][comentarios_key];
+
+  try {
+    const respuesta = await axios.get(
+      `https://jsonplaceholder.typicode.com/comments?postId=${seleccionada.id}`
+    );
+
+    const actualizada = {
+      ...seleccionada,
+      comentarios: respuesta.data,
+    };
+
+    const publicaciones_actualizadas = [...publicaciones];
+    publicaciones_actualizadas[publicaciones_key] = [
+      ...publicaciones[publicaciones_key],
+    ];
+    publicaciones_actualizadas[publicaciones_key][
+      comentarios_key
+    ] = actualizada;
+
+    dispatch({
+      type: COMENTARIOS_ACTUALIZAR,
+      payload: publicaciones_actualizadas,
+    });
+  } catch (error) {
+    dispatch({
+      type: COMENTARIOS_ERROR,
+      payload: "Comentarios no disponibles",
+    });
+  }
 };
