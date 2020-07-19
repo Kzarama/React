@@ -1,7 +1,7 @@
 import {
-  TRAER_POR_USUARIO,
   CARGANDO,
   ERROR,
+  TRAER_POR_USUARIO,
 } from "../types/publicacionesTypes";
 
 const INITIAL_STATE = {
