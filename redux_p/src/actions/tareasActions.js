@@ -6,7 +6,7 @@ import {
   ERROR,
   CAMBIO_USUARIO_ID,
   CAMBIO_TITULO,
-  AGREGADA,
+  GUARDAR,
 } from "../types/tareasTypes";
 
 export const traerTodas = () => async (dispatch) => {
@@ -68,7 +68,28 @@ export const agregar = (nueva_tarea) => async (dispatch) => {
     );
 
     dispatch({
-      type: AGREGADA,
+      type: GUARDAR,
+    });
+  } catch (error) {
+    dispatch({
+      type: ERROR,
+      payload: "Intente mas tarde",
+    });
+  }
+};
+
+export const editar = (tarea_editada) => async (dispatch) => {
+  dispatch({
+    type: CARGANDO,
+  });
+  try {
+    const respuesta = await axios.put(
+      `https://jsonplaceholder.typicode.com/todos/${tarea_editada.id}`,
+      tarea_editada
+    );
+
+    dispatch({
+      type: GUARDAR,
     });
   } catch (error) {
     dispatch({
