@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import * as tareasActions from "../../actions/tareasActions";
+import Spinner from "../General/Spinner";
+import Fatal from "../General/Fatal";
 
 class Guardar extends React.Component {
   cambioUsuarioId = (event) => {
@@ -21,6 +23,20 @@ class Guardar extends React.Component {
     agregar(nueva_tarea);
   };
 
+  desabilitar = () => {
+    const { titulo, usuario_id, cargando } = this.props;
+
+    if (cargando) return true;
+    if (!usuario_id || !titulo) return true;
+    return false;
+  };
+
+  mostrarAccion = () => {
+    const { error, cargando } = this.props;
+    if (cargando) return <Spinner />;
+    if (error) return <Fatal mensaje={error} />;
+  };
+
   render() {
     return (
       <div>
@@ -37,7 +53,10 @@ class Guardar extends React.Component {
         <input value={this.props.titulo} onChange={this.cambioTitulo} />
         <br />
         <br />
-        <button onClick={this.guardar}>Guardar</button>
+        <button onClick={this.guardar} disabled={this.desabilitar()}>
+          Guardar
+        </button>
+        {this.mostrarAccion()}
       </div>
     );
   }
