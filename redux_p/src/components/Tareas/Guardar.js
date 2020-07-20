@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import * as tareasActions from "../../actions/tareasActions";
 import Spinner from "../General/Spinner";
 import Fatal from "../General/Fatal";
+import { Redirect } from "react-router-dom";
 
 class Guardar extends React.Component {
   cambioUsuarioId = (event) => {
@@ -40,6 +41,7 @@ class Guardar extends React.Component {
   render() {
     return (
       <div>
+        {this.props.regresar ? <Redirect to="/tareas" /> : ""}
         <h1>Guardar tarea</h1>
         Usuario id:
         <input
