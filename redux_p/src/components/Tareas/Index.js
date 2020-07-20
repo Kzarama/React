@@ -12,6 +12,14 @@ class Tareas extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    const { tareas, cargando, traerTodas } = this.props;
+
+    if (!Object.keys(tareas).length && !cargando) {
+      traerTodas();
+    }
+  }
+
   mostrarContenido = () => {
     const { tareas, cargando, error } = this.props;
     if (cargando) return <Spinner />;
@@ -26,7 +34,7 @@ class Tareas extends React.Component {
   };
 
   ponerTareas = (usu_id) => {
-    const { tareas, cambioCheck } = this.props;
+    const { tareas, cambioCheck, eliminar } = this.props;
     const por_usuario = {
       ...tareas[usu_id],
     };
@@ -42,7 +50,9 @@ class Tareas extends React.Component {
         <button className="m_left">
           <Link to={`/tareas/guardar/${usu_id}/${tar_id}`}>Editar</Link>
         </button>
-        <button className="m_left">Eliminar</button>
+        <button className="m_left" onClick={() => eliminar(tar_id)}>
+          Eliminar
+        </button>
       </div>
     ));
   };
